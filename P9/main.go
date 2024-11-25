@@ -31,4 +31,9 @@ func main() {
 	chars := []byte{'a', 'a', 'b', 'b', 'c', 'c', 'c'}
 	length := compress(chars)
 	fmt.Println(chars[:length]) // Output: ["a","2","b","2","c","3"]
+
+	chars_1 := []byte{'a', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b'}
+	length_1 := compress_v1(chars_1)
+	fmt.Println("Compressed length:", length_1)
+	fmt.Println("Compressed array:", string(chars[:length_1]))
 }

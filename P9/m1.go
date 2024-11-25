@@ -1,4 +1,8 @@
-func compress(chars []byte) int {
+package main
+
+import "fmt"
+
+func compress_v1(chars []byte) int {
 	n := len(chars)
 	if n == 0 {
 		return 0
@@ -30,9 +34,7 @@ func compress(chars []byte) int {
 	return writeIndex
 }
 
-func main() {
-	chars := []byte{'a', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b'}
-	length := compress(chars)
-	fmt.Println("Compressed length:", length)
-	fmt.Println("Compressed array:", string(chars[:length]))
-}
+// chars := []byte{'a', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b'}
+// length := compress(chars)
+// fmt.Println("Compressed length:", length)
+// fmt.Println("Compressed array:", string(chars[:length]))
