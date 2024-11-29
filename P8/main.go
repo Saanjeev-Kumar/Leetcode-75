@@ -24,5 +24,5 @@ func increasingTriplet(nums []int) bool {
 func main() {
 	nums := []int{2, 1, 5, 0, 4, 6}
 	result := increasingTriplet(nums)
-	fmt.Println(result) // Output: true
+	fmt.Println(result) 
 }
