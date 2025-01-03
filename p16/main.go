@@ -39,3 +39,25 @@ func main() {
 	result := longestOnes(nums, k)
 	fmt.Println(result) // Output: 6
 }
+
+func longestOnes1(nums []int, k int) int {
+	l := 0
+	cur0 := 0
+	res := -1
+	for r := 0; r < len(nums); r++ {
+		if nums[r] == 0 {
+			cur0++
+			if cur0 > k {
+				for l < r && nums[l] == 1 {
+					l++
+				}
+				cur0--
+				l++
+			}
+		}
+		if r-l+1 > res {
+			res = r - l + 1
+		}
+	}
+	return res
+}
