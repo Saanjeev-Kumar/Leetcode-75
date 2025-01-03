@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"slices"
 	"strings"
 )
 
@@ -48,4 +49,40 @@ func main() {
 	k := 2
 	result := maxVowels(s, k)
 	fmt.Println(result) // Output: 3
+}
+
+func maxVowels(s string, k int) int {
+
+	vowels := []byte{'a', 'e', 'i', 'o', 'u'}
+
+	l := 0
+	r := 0
+
+	res := 0
+	sum := 0
+
+	for r < len(s) {
+		for r-l < k {
+			if slices.Contains(vowels, s[r]) {
+				sum++
+			}
+			r++
+		}
+
+		res = max(res, sum)
+		if slices.Contains(vowels, s[l]) {
+			sum--
+		}
+		l++
+	}
+
+	return res
+}
+
+func max(a int, b int) int {
+	if a > b {
+		return a
+	} else {
+		return b
+	}
 }
