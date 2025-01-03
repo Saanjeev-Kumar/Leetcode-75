@@ -51,7 +51,7 @@ func main() {
 	fmt.Println(result) // Output: 3
 }
 
-func maxVowels(s string, k int) int {
+func maxVowels1(s string, k int) int {
 
 	vowels := []byte{'a', 'e', 'i', 'o', 'u'}
 
@@ -77,12 +77,4 @@ func maxVowels(s string, k int) int {
 	}
 
 	return res
-}
-
-func max(a int, b int) int {
-	if a > b {
-		return a
-	} else {
-		return b
-	}
 }
