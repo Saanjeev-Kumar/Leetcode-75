@@ -37,3 +37,25 @@ func main() {
 	result := longestSubarray(nums)
 	fmt.Println(result) // Output: 3
 }
+
+func longestSubarray1(nums []int) int {
+	count0 := 0
+	maxcount := 0
+	//count := 0
+	left := 0
+
+	for right := 0; right < len(nums); right++ {
+		if nums[right] == 0 {
+			count0++
+		}
+		for count0 > 1 {
+			if nums[left] == 0 {
+				count0--
+			}
+			left++
+		}
+		maxcount = max(maxcount, right-left)
+	}
+
+	return maxcount
+}
