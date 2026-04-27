@@ -10,7 +10,6 @@ func maximumSubarraySum(nums []int, k int) int64{
             fmt.Println(win1)
             max = Max(max,Sum(win1))
         }
-
     }
     return int64(max)
 }
