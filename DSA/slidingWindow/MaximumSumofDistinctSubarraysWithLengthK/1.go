@@ -1,3 +1,5 @@
+//Logic: First
+
 func maximumSubarraySum(nums []int, k int) int64{
     // n := len(nums)
     win := Sum(nums[:k])
