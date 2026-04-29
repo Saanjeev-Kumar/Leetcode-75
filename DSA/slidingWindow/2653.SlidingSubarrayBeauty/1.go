@@ -1,6 +1,6 @@
 // First logic --> Wrong Answer
-//625 / 717 testcases passed --> nums := []int{-46, -34, -46} k := 3 x := 3
-
+//625 / 717 testcases passed --> nums := []int{-46, -34, -46} k := 3 x := 3 //Logic 2
+// Now Time Limit Exceeded 714 / 717 testcases passed
 
 package main
 
@@ -41,8 +41,15 @@ func getSubarrayBeauty(nums []int, k int, x int) []int {
 		keys = append(keys, k)
 	}
 	sort.Ints(keys)
-	if len(keys) >= x {
-		win = keys[x-1] 
+	// if len(keys) >= x { //logic 1
+	// 	win = keys[x-1] 
+	// }
+	for _, key := range keys { //logic 2
+		count += res[key] // Add the frequency of the current key
+		if count >= x {   // Once we hit or pass 'x', we found our number!
+			win = key
+			break
+		}
 	}
 	if win > 0 {
         win = 0
